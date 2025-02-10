@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
-import Header from "@/components/common/Header";
+import Navbar from "@/components/common/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,8 +37,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ReactQueryProvider>
-            <Header />
-            {children}
+            <Navbar />
+            <main className="w-full">{children}</main>
           </ReactQueryProvider>
         </ThemeProvider>
       </body>
